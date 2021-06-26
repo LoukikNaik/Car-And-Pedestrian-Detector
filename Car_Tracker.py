@@ -11,6 +11,8 @@ pedestrian_tracker = cv2.CascadeClassifier(pedestrian_tracker_file)
 
 while True:
     (read_succesful,frame)=video.read()
+    if not read_succesful:
+        break
     if read_succesful:
         grayscaled_frame=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     else:
